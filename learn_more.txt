@@ -1,1 +1,3 @@
 docker file each bit
+github actions - more feature for junior dev
+django test framework
