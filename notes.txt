@@ -17,4 +17,14 @@ in TDD:
     then add actual fucntionality and return proper resuult and check 
     this way you kow the module/methods being tested for exists and it works the way its supposed to 
 
+Mocking: 
+    override or change behaviour of dependencies
+    helps avoind unintended side effects
+    helps isolate code being tested
+    example - sending email testing, 
+        in this mocking can be used to block actaul sending of email 
+        and just check if send_email is called
+        db testing and sleep fucntionality 
+            instead of using sleep(default) waiting 5 seconds for db to be available, 
+            can be replacd with a mock object to sleep of lower time and test the db instantly   
  
