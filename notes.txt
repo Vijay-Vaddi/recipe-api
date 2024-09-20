@@ -9,3 +9,12 @@ testing :
         saves time in testing 
     TestCase 
         has db and used when needed db  
+
+in TDD: 
+    first write a test, to test a func, and then test that code 
+    fail the rest and see the error, 
+    add fucntionality and return dummy if possible and test to see if the testing module is picked
+    then add actual fucntionality and return proper resuult and check 
+    this way you kow the module/methods being tested for exists and it works the way its supposed to 
+
+ 
