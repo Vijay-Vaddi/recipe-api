@@ -1,0 +1,5 @@
+volumes in docker-compose.yaml syncs container with local files.  
+
+imp to have .github/workflows/name.yaml to be in root project dir
+    for github to pick up 
+
