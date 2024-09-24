@@ -36,3 +36,7 @@ Testing API
 Database setup:
 setup with docker 
 start db before app since it Depends on it. 
+
+psycopg2 : django adaptor to connect to db engine 
+needs some dependencies while installing, and some while running. 
+can cleanup the build dependencies later on 
