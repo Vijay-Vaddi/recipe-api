@@ -27,4 +27,12 @@ Mocking:
         db testing and sleep fucntionality 
             instead of using sleep(default) waiting 5 seconds for db to be available, 
             can be replacd with a mock object to sleep of lower time and test the db instantly   
- 
+
+Testing API
+    make actual request to endpoints and get results. 
+    django APIclient, built on top of TestClient, makes requests, check requels, over' auth for tests. 
+    using django.test APIclient, can test result status code, and data
+
+Database setup:
+setup with docker 
+start db before app since it Depends on it. 
