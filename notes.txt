@@ -40,3 +40,11 @@ start db before app since it Depends on it.
 psycopg2 : django adaptor to connect to db engine 
 needs some dependencies while installing, and some while running. 
 can cleanup the build dependencies later on 
+
+-------
+ depends_on:
+      - db
+      docker compose makes sure service has started 
+        but doesnt ensure the postgres db is running
+        
+        so have to wait_for_db to be ready to work with app and db 

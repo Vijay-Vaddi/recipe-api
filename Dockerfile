@@ -11,13 +11,13 @@ WORKDIR /app
 EXPOSE 8000
 
 ARG DEV=false 
-RUN python -m venv /venv && \
-    /venv/bin/pip install --upgrade pip && \
-    apk add --update --no-cache postgresql-client && \
+RUN apk add --update --no-cache python3-dev libffi-dev bash postgresql-client && \
     apk add --update --no-cache --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev && \
+    python -m venv /venv && \
+    /venv/bin/pip install --upgrade pip && \    
     /venv/bin/pip install -r /tmp/requirements.txt && \
-    if [ $DEV = "true" ]; then \ 
+    if [ "$DEV" = "true" ]; then \ 
         /venv/bin/pip install -r /tmp/requirements.dev.txt; \
     fi && \
     rm -rf /tmp && \
