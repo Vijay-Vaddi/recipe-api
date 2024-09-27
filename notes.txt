@@ -48,3 +48,6 @@ can cleanup the build dependencies later on
         but doesnt ensure the postgres db is running
         
         so have to wait_for_db to be ready to work with app and db 
+
+app/management/commands directory stucture will allow us to run python manage.py 
+damm, learn more on this. 
