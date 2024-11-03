@@ -9,7 +9,7 @@ class CalcTest(SimpleTestCase):
         a, b = 2,2
         res = calc.add(a, b)
         self.assertEqual(res,4)
-
+ 
     def test_substract(self):
         """substracting numbers"""
         a, b = 5, 2
