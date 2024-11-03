@@ -1,53 +1,61 @@
-volumes in docker-compose.yaml syncs container with local files.  
+volumes in docker-compose.yaml syncs container with local files.
 
 imp to have .github/workflows/name.yaml to be in root project dir
-    for github to pick up 
+    for github to pick up
 
 testing :
     SimpleTestCase
-        no db creation 
-        saves time in testing 
-    TestCase 
-        has db and used when needed db  
+        no db creation
+        saves time in testing
+    TestCase
+        has db and used when needed db
 
-in TDD: 
-    first write a test, to test a func, and then test that code 
-    fail the rest and see the error, 
+in TDD:
+    first write a test, to test a func, and then test that code
+    fail the rest and see the error,
     add fucntionality and return dummy if possible and test to see if the testing module is picked
-    then add actual fucntionality and return proper resuult and check 
-    this way you kow the module/methods being tested for exists and it works the way its supposed to 
+    then add actual fucntionality and return proper resuult and check
+    this way you kow the module/methods being tested for exists and it works the way its supposed to
 
-Mocking: 
+Mocking:
     override or change behaviour of dependencies
     helps avoind unintended side effects
     helps isolate code being tested
-    example - sending email testing, 
-        in this mocking can be used to block actaul sending of email 
+    example - sending email testing,
+        in this mocking can be used to block actaul sending of email
         and just check if send_email is called
-        db testing and sleep fucntionality 
-            instead of using sleep(default) waiting 5 seconds for db to be available, 
-            can be replacd with a mock object to sleep of lower time and test the db instantly   
+        db testing and sleep fucntionality
+            instead of using sleep(default) waiting 5 seconds for db to be available,
+            can be replacd with a mock object to sleep of lower time and test the db instantly
 
 Testing API
-    make actual request to endpoints and get results. 
-    django APIclient, built on top of TestClient, makes requests, check requels, over' auth for tests. 
+    make actual request to endpoints and get results.
+    django APIclient, built on top of TestClient, makes requests, check requels, over' auth for tests.
     using django.test APIclient, can test result status code, and data
 
 Database setup:
-setup with docker 
-start db before app since it Depends on it. 
+setup with docker
+start db before app since it Depends on it.
 
-psycopg2 : django adaptor to connect to db engine 
-needs some dependencies while installing, and some while running. 
-can cleanup the build dependencies later on 
+psycopg2 : django adaptor to connect to db engine
+needs some dependencies while installing, and some while running.
+can cleanup the build dependencies later on
 
 -------
  depends_on:
       - db
-      docker compose makes sure service has started 
+      docker compose makes sure service has started
         but doesnt ensure the postgres db is running
-        
-        so have to wait_for_db to be ready to work with app and db 
 
-app/management/commands directory stucture will allow us to run python manage.py 
-damm, learn more on this. 
+        so have to wait_for_db to be ready to work with app and db
+
+app/management/commands directory stucture will allow us to run python manage.py
+damm, learn more on this.
+
+======
+
+djangos base user model and customizing.
+
+add unit test to test user model
+
+best to use get_user_model instead of using the user model directly.
