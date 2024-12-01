@@ -59,3 +59,6 @@ djangos base user model and customizing.
 add unit test to test user model
 
 best to use get_user_model instead of using the user model directly.
+
+=====
+test user email normalization
